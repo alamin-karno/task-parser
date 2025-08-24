@@ -1,7 +1,7 @@
-import 'task.dart';
+import 'task_model.dart';
 
-class MathematicsTask extends Task {
-  MathematicsTask({
+class MathematicsTaskModel extends TaskModel {
+  MathematicsTaskModel({
     required super.title,
     required super.description,
     required this.field,

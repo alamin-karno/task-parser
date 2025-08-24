@@ -1,7 +1,7 @@
-import 'task.dart';
+import 'task_model.dart';
 
-class GraphicsDesignTask extends Task {
-  GraphicsDesignTask({
+class GraphicsDesignTaskModel extends TaskModel {
+  GraphicsDesignTaskModel({
     required super.title,
     required super.description,
     required this.platform,

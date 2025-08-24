@@ -1,7 +1,7 @@
-import 'task.dart';
+import 'task_model.dart';
 
-class ProgrammingTask extends Task {
-  ProgrammingTask({
+class ProgrammingTaskModel extends TaskModel {
+  ProgrammingTaskModel({
     required super.title,
     required super.description,
     required this.platform,
