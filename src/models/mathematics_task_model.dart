@@ -8,4 +8,12 @@ class MathematicsTaskModel extends TaskModel {
   });
 
   final String field;
+
+  factory MathematicsTaskModel.fromMap(Map<String, dynamic> map) {
+    return MathematicsTaskModel(
+      title: map['title'],
+      description: map['description'],
+      field: map['field'],
+    );
+  }
 }
