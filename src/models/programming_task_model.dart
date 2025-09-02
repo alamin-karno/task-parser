@@ -4,6 +4,8 @@ class ProgrammingTaskModel extends TaskModel {
   ProgrammingTaskModel({
     required super.title,
     required super.description,
+    super.createdAt,
+    super.updatedAt,
     required this.platforms,
     required this.language,
   });
@@ -15,6 +17,12 @@ class ProgrammingTaskModel extends TaskModel {
     return ProgrammingTaskModel(
       title: map['title'],
       description: map['description'],
+      createdAt: map['createdAt'] != null
+          ? DateTime(map['createdAt'])
+          : DateTime.now(),
+      updatedAt: map['updatedAt'] != null
+          ? DateTime(map['updatedAt'])
+          : DateTime.now(),
       platforms: map['platforms'],
       language: map['language'],
     );

@@ -1,5 +1,5 @@
 import '../models/task_model.dart';
 
-abstract class TaskParser {
+abstract interface class TaskParser {
   List<TaskModel> parse(String value);
 }

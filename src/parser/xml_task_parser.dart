@@ -1,7 +1,7 @@
 import '../models/task_model.dart';
 import 'task_parser.dart';
 
-class XmlTaskParser extends TaskParser {
+class XmlTaskParser implements TaskParser {
   @override
   List<TaskModel> parse(String value) {
     // TODO: implement parse

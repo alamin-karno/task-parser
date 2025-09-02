@@ -4,6 +4,8 @@ class MathematicsTaskModel extends TaskModel {
   MathematicsTaskModel({
     required super.title,
     required super.description,
+    super.createdAt,
+    super.updatedAt,
     required this.field,
   });
 
@@ -13,6 +15,12 @@ class MathematicsTaskModel extends TaskModel {
     return MathematicsTaskModel(
       title: map['title'],
       description: map['description'],
+      createdAt: map['createdAt'] != null
+          ? DateTime(map['createdAt'])
+          : DateTime.now(),
+      updatedAt: map['updatedAt'] != null
+          ? DateTime(map['updatedAt'])
+          : DateTime.now(),
       field: map['field'],
     );
   }

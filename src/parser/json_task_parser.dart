@@ -4,7 +4,7 @@ import '../factory/task_factory.dart';
 import '../models/task_model.dart';
 import 'task_parser.dart';
 
-class JsonTaskParser extends TaskParser {
+class JsonTaskParser implements TaskParser {
   @override
   List<TaskModel> parse(String value) {
     final List<dynamic> data = json.decode(value);
