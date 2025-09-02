@@ -4,8 +4,8 @@ class ProgrammingTaskModel extends TaskModel {
   ProgrammingTaskModel({
     required super.title,
     required super.description,
-    super.createdAt,
-    super.updatedAt,
+    required super.createdAt,
+    required super.updatedAt,
     required this.platforms,
     required this.language,
   });
