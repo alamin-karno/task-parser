@@ -5,12 +5,12 @@ import '../models/task_model.dart';
 
 class TaskFactory {
   static TaskModel fromMap(Map<String, dynamic> map) {
-    switch (map['type']) {
-      case 'Mathematics':
+    switch (map['type'].toString().toLowerCase()) {
+      case 'mathematics':
         return MathematicsTaskModel.fromMap(map);
-      case 'Programming':
+      case 'programming':
         return ProgrammingTaskModel.fromMap(map);
-      case 'Graphics_Design':
+      case 'graphics_design':
         return GraphicsDesignTaskModel.fromMap(map);
       default:
         throw Exception('Unknown Task Type.');

@@ -1,7 +1,8 @@
 import 'db/sqlite_database_manager.dart';
 import 'parser/json_task_parser.dart';
+import 'task_execution.dart';
 
-void main() async {
+void main() {
   final jsonInput = '''
 [
   {"title" : "Sample Programming task", "description" : "Create E-Commerce client", "platforms" : "WEB", "language" :"JavaScript", "type" : "Programming"},
@@ -11,15 +12,12 @@ void main() async {
 ''';
 
   final taskParser = JsonTaskParser();
-  final tasks = taskParser.parse(jsonInput);
-
   final dbManager = SQLiteDatabaseManager();
-  await dbManager.saveTask(tasks);
 
-  final allTasks = await dbManager.getAllTask();
-  for (final task in allTasks) {
-    print(
-      '${task.runtimeType} -> Title: ${task.title} -  Description: ${task.description}',
-    );
-  }
+  final taskExecution = TaskExecution(
+    taskParser: taskParser,
+    dbManager: dbManager,
+  );
+
+  taskExecution.execute(jsonInput);
 }
