@@ -1,7 +1,7 @@
 import '../models/task_model.dart';
 import 'database_manager.dart';
 
-class SQLiteDatabaseManager extends DatabaseManager {
+class SQLiteDatabaseManager implements DatabaseManager {
   List<TaskModel> _tasks = [];
 
   @override
