@@ -4,8 +4,8 @@ class MathematicsTaskModel extends TaskModel {
   MathematicsTaskModel({
     required super.title,
     required super.description,
-    super.createdAt,
-    super.updatedAt,
+    required super.createdAt,
+    required super.updatedAt,
     required this.field,
   });
 
