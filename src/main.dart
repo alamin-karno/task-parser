@@ -1,6 +1,6 @@
 import 'db/sqlite_database_manager.dart';
 import 'parser/json_task_parser.dart';
-import 'task_execution.dart';
+import 'task_manager.dart';
 
 void main() {
   final jsonInput = '''
@@ -14,10 +14,7 @@ void main() {
   final taskParser = JsonTaskParser();
   final dbManager = SQLiteDatabaseManager();
 
-  final taskExecution = TaskExecution(
-    taskParser: taskParser,
-    dbManager: dbManager,
-  );
+  final taskManager = TaskManager(taskParser: taskParser, dbManager: dbManager);
 
-  taskExecution.execute(jsonInput);
+  taskManager.execute(jsonInput);
 }

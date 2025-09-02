@@ -1,8 +1,8 @@
 import 'db/database_manager.dart';
 import 'parser/task_parser.dart';
 
-class TaskExecution {
-  const TaskExecution({required this.taskParser, required this.dbManager});
+class TaskManager {
+  const TaskManager({required this.taskParser, required this.dbManager});
 
   final TaskParser taskParser;
   final DatabaseManager dbManager;
