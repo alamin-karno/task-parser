@@ -46,5 +46,22 @@ void main() {
         (r) => fail('Expected parsing to fail but it succeeded'),
       );
     });
+
+    test('Throws an exception for invalid task type', () {
+      final invalidTypeJSON = '''
+              [
+                {"title" : "Sample Programming task", "description" : "Create E-Commerce client", "platforms" : "WEB", "language" :"JavaScript", "type" : "Coding"},
+              ]
+              ''';
+
+      final result = parser.parse(invalidTypeJSON);
+
+      expect(result.isLeft(), true);
+
+      result.fold(
+        (l) => expect(l, isA<Exception>()),
+        (r) => fail('Expected parsing to fail but it succeeded'),
+      );
+    });
   });
 }
