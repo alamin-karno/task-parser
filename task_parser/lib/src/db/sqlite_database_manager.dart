@@ -1,4 +1,4 @@
-import '../models/task_model.dart';
+import '../../../../src/models/task_model.dart';
 import 'database_manager.dart';
 
 class SQLiteDatabaseManager implements DatabaseManager {
